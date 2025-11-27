@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* The scene doesn't need to be scrolled at first so we deactivate it */
+  background-color: #111; /* Make the background dark */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
