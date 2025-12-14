@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber'
-import { PerspectiveCamera } from '@react-three/drei'
+import { Html, PerspectiveCamera } from '@react-three/drei'
+import { Suspense } from 'react'
 import Desk from './components/Desk'
 
 export default function App() {
@@ -9,8 +10,8 @@ export default function App() {
 
         <PerspectiveCamera 
           makeDefault 
-          position={[0, 1, 1.3]}
-          rotation={[0.05,0,0]}
+          position={[0, 1.1, 1.1]}
+          rotation={[-0.2,0,0]}
           fov={45} 
           near={0.1} 
           far={100}
@@ -18,7 +19,9 @@ export default function App() {
         
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 10, 5]} intensity={1.5} />
-        <Desk />
+        <Suspense fallback={<Html center>Loading...</Html>}>
+          <Desk />
+        </Suspense>
 
       </Canvas>
     </div>
